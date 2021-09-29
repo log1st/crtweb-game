@@ -1,0 +1,15 @@
+@import "functions.scss";
+
+@mixin t($size, $height, $bold: false, $spacing: 0px) {
+  font-size: rem($size);
+  line-height: rem($height);
+  letter-spacing: $spacing;
+
+  @if $bold {
+    font-weight: 600;
+  }
+}
+
+@mixin text($bold: false) {
+  @include t(16, 21, $bold);
+}
