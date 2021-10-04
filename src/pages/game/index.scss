@@ -1,0 +1,119 @@
+@import "~@/assets/utils";
+
+.page {
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+}
+
+.start {
+  margin: auto;
+  padding: rem(20px) rem(30px) rem(20px) rem(18px);
+
+  font-size: rem(24px);
+
+  cursor: pointer;
+
+  background: rgba(tomato, .9);
+  color: white;
+  border-radius: rem(10px);
+
+  display: flex;
+  align-items: center;
+
+  transition: .15s ease;
+  transition-property: opacity, transform;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &.enterFrom,
+  &.leaveTo {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+.startIcon {
+  height: rem(40px);
+  width: rem(40px);
+  margin-right: rem(6px);
+}
+
+.game {
+  transition: opacity .15s ease;
+
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  &.enterFrom,
+  &.leaveTo {
+    opacity: 0;
+  }
+}
+
+.time {
+  font-weight: bold;
+  font-size: rem(64px);
+  text-align: center;
+  opacity: .8;
+  color: rgba(tomato, .9);
+
+  margin: auto 0 0;
+}
+
+.cards {
+  --items-per-line: 6;
+  --duration: 1000s;
+
+  display: grid;
+  grid-gap: rem(20px);
+  grid-template-columns: repeat(var(--items-per-line), 1fr);
+  width: calc(var(--items-per-line) * #{rem(100px)});
+
+  margin: rem(40px) auto auto;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  aspect-ratio: 1;
+
+  background: rgba(tomato, .7);
+  border-radius: rem(6px);
+
+  transition: transform var(--duration) linear var(--duration);
+
+  &.picked {
+    transform: rotateY(180deg);
+    transition-delay: 0s;
+  }
+
+  &:not(.solved):not(.picked) {
+    cursor: pointer;
+
+    .icon {
+      opacity: 0;
+      transition-delay: calc(var(--duration) * 1.5);
+    }
+  }
+}
+
+.icon {
+  height: rem(42px);
+  width: rem(42px);
+  color: white;
+
+  transition: opacity .01s ease calc(var(--duration) / 2);
+}

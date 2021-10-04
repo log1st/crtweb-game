@@ -2,11 +2,10 @@ const title = require('./package.json').description;
 
 module.exports = {
   chainWebpack(config) {
-    config.module.rule('svg')
-      .exclude.add(/\.inline\./);
+    config.module.rules.delete('svg');
 
     config.module.rule('vue-svg')
-      .test(/\.inline\.svg/)
+      .test(/\.svg$/)
       .use('vue-loader')
       .loader('vue-loader-v16')
       .end()

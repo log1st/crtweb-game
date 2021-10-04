@@ -5,6 +5,6 @@
 
 :root {
   font: 400 $baseFontSize 'Inter', sans-serif;
-  height: vh(100);
+  min-height: vh(100);
   overflow: hidden;
 }

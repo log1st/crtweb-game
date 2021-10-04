@@ -5,3 +5,55 @@
 
 @import "~@/assets/utils";
 
+.app {
+  display: flex;
+  flex-direction: column;
+  height: vh(100);
+}
+
+.header {
+  display: flex;
+  min-height: rem(54px);
+  padding: 0 rem(24px);
+  background: tomato;
+  color: white;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  @include heading(true);
+  cursor: pointer;
+}
+
+.logo {
+  height: 1em;
+  width: 1em;
+  margin-right: rem(14px);
+}
+
+.links {
+  display: flex;
+  margin: 0 rem(-10px) 0 rem(20px);
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0 rem(10px);
+
+  &:not(.active) {
+    &:hover, &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  &.active {
+    background: rgba(white, .2);
+  }
+}
+
+.content {
+  flex-grow: 1;
+}

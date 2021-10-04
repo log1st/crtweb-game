@@ -1,0 +1,77 @@
+@import "~@/assets/utils";
+
+.row {
+  display: grid;
+  grid-template-columns: rem(70px) 2fr 1fr 1fr rem(100px);
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+}
+
+.header {
+  .cell {
+    padding: rem(14px) rem(10px);
+    @include text(true);
+  }
+}
+
+.records {
+  .cell {
+    padding: rem(6px) rem(10px);
+    @include text;
+
+    &.place {
+      font-weight: bold;
+    }
+
+    &.mistakes {
+      color: tomato;
+      font-weight: bold;
+    }
+
+    &.gold {
+      background: rgba(gold, .1);
+    }
+
+    &.silver {
+      background: rgba(silver, .1);
+    }
+
+    &.bronze {
+      background: rgba(peru, .1);
+    }
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  column-gap: rem(10px);
+}
+
+.action {
+  height: rem(24px);
+  width: rem(24px);
+  padding: rem(2px);
+
+  cursor: pointer;
+
+  &.danger {
+    color: tomato;
+  }
+}
+
+.noData {
+  padding: rem(20px);
+  color: black;
+  text-align: center;
+  white-space: break-spaces;
+
+  a {
+    text-decoration: underline;
+    cursor: pointer;
+    color: cornflowerblue;
+  }
+}

@@ -13,3 +13,7 @@
 @mixin text($bold: false) {
   @include t(16, 21, $bold);
 }
+
+@mixin heading($bold: false) {
+  @include t(24, 29, $bold);
+}
