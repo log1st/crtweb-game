@@ -1,6 +1,10 @@
 const title = require('./package.json').description;
 
 module.exports = {
+  build: {
+    publicPath: '/crtweb-game/',
+    outputDir: 'docs',
+  },
   chainWebpack(config) {
     config.module.rules.delete('svg');
 
